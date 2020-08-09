@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js"
+       type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <div style="width: 640px; height: 480px" id="mapContainer"></div>
+    <script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'd0pIcSH8CRFRQhmEw0StMNIUdIufw5ZJ7-tEiniSupQ'
+      });
+
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 10,
+          center: { lat: 34, lng: -118 }
+        });
+      const mapEvents = new H.mapevents.MapEvents(map);  
+      const behavior = new H.mapevents.Behavior(mapEvents);
+      var icon = new H.map.Icon('/Users/joelsaarinen/projects/angelproject/graphics/mapmarker.png');
+      var marker = new H.map.Marker({ lat: 34, lng: -118 });
+      map.addObject(marker);
+    </script>
+  </body>
+</html>
+
+
+<!--
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>nametbd</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
+            type="text/javascript" charset="utf-8"></script>
+        <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
+            type="text/javascript" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Welcome to [name to be determined]!</h1>
+        <h2>Find free services around you. Updated continuously.</h2>
+        <h3>Select the services that you're looking for and view the nearest ones on the map!</h3>
+        <div class="btn-group-1">
+            <button>Food</button>
+            <button>Shelter</button>
+        </div>
+        <div class="btn-group-2">
+            <button>Clothes</button>
+            <button>TBD</button>
+        </div>
+        <div style="width: 640px; height: 480px" id="mapContainer"></div>
+    <script>
+      // Initialize the platform object:
+      var platform = new H.service.Platform({
+        'apikey': 'rjv64Kg4_W0yEUJjqysqRfbTfNA7rzr9ZKiunovX_Gc'
+      });
+
+      // Obtain the default map types from the platform object
+      var maptypes = platform.createDefaultLayers();
+
+      // Instantiate (and display) a map object:
+      var map = new H.Map(
+        document.getElementById('mapContainer'),
+        maptypes.vector.normal.map,
+        {
+          zoom: 10,
+          center: { lng: 13.5, lat: 52.51 }
+        });
+    </script>
+    </body>
+</html>
+-->
